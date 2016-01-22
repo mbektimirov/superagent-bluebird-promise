@@ -3,7 +3,7 @@
 var Promise = require("bluebird");
 
 // So you can `var request = require("superagent-bluebird-promise")`
-var superagent = module.exports = require("superagent");
+var superagent = require("superagent");
 var Request = superagent.Request;
 
 Promise.config({
@@ -98,3 +98,5 @@ Request.prototype.then = function() {
   var promise = this.promise();
   return promise.then.apply(promise, arguments);
 };
+
+module.exports = superagent;
